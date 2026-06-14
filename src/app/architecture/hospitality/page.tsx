@@ -2,33 +2,33 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Residential Projects | CeritaSketsa Studio",
+  title: "Hospitality Projects | CeritaSketsa Studio",
   description:
-    "Koleksi proyek hunian CeritaSketsa Studio — rumah tropis kontemporer yang menyeimbangkan kenyamanan, privasi, dan estetika arsitektur modern.",
+    "Portofolio proyek hospitality CeritaSketsa Studio — desain resor, hotel, dan destinasi wisata yang menciptakan pengalaman berkesan dan berkelanjutan.",
 };
 
 const projects = [
   {
-    slug: "villa-arjuna",
-    image: "/villa_arjuna.png",
-    category: "Hunian",
-    location: "Sentul, 2024",
-    title: "Villa Arjuna — Rumah Tropis Kontemporer di Perbukitan",
+    slug: "green-valley-resort",
+    image: "/kampung_vertikal.png",
+    category: "Hospitality",
+    location: "Bali, 2024",
+    title: "Green Valley Ecological Resort",
     description:
-      "Villa mewah yang memanfaatkan topografi perbukitan alami, memadukan beton ekspos dengan material kayu jati hangat.",
+      "Desain resor ramah lingkungan berbasis bambu terintegrasi dengan lansekap sawah berundak khas Bali.",
   },
   {
-    slug: "rumah-prambanan",
-    image: "/rumah_prambanan.png",
-    category: "Hunian",
-    location: "Yogyakarta, 2022",
-    title: "Rumah Prambanan — Modernitas berbalut Tradisi",
+    slug: "amarta-bay-resort",
+    image: "/villa_arjuna.png",
+    category: "3D Rendering",
+    location: "Lombok, 2023",
+    title: "Amarta Bay Boutique Resort",
     description:
-      "Hunian minimalis yang mengadaptasi filosofi arsitektur tradisional Jawa dengan sirkulasi silang dan pencahayaan optimal.",
+      "Visualisasi 3D berkualitas fotorealistik untuk proyek resor pantai bintang lima dengan pencahayaan dramatis dan material alami.",
   },
 ];
 
-export default function ResidentialPage() {
+export default function HospitalityPage() {
   return (
     <>
       <Nav />
@@ -41,12 +41,12 @@ export default function ResidentialPage() {
               Portfolio / Architecture
             </span>
             <h1 className="font-serif text-4xl md:text-6xl font-light tracking-tight text-text mb-6">
-              Residential{" "}
-              <em className="italic font-light text-dark-muted">Projects</em>
+              Hospitality &{" "}
+              <em className="italic font-light text-dark-muted">3D Projects</em>
             </h1>
             <p className="text-sm font-light text-dark-muted leading-relaxed max-w-[600px]">
-              Kami merancang hunian personal yang menyeimbangkan kenyamanan privasi dengan
-              keindahan arsitektur tropis kontemporer.
+              Kami menghadirkan visualisasi 3D kelas dunia dan rancangan destinasi rekreasi /
+              perhotelan yang mengesankan serta berkelanjutan.
             </p>
           </div>
 
@@ -55,11 +55,11 @@ export default function ResidentialPage() {
             {projects.map((project) => (
               <a
                 key={project.slug}
-                href={`/architecture/residential/${project.slug}`}
+                href={`/architecture/hospitality/${project.slug}`}
                 className="group block"
                 style={{ textDecoration: "none" }}
               >
-                <div className="overflow-hidden bg-[#e8e4de] aspect-[4/3] mb-4 relative">
+                <div className="overflow-hidden bg-[#ebe7e1] aspect-[4/3] mb-4 relative">
                   <img
                     src={project.image}
                     alt={project.title}

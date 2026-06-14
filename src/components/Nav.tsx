@@ -37,7 +37,7 @@ export default function Nav() {
           className="font-serif text-lg font-normal tracking-[0.12em] uppercase text-text decoration-none flex items-center"
         >
           <img
-            src="../logo-CS.png"
+            src="/logo-CS.png"
             alt="CS Logo"
             className={`w-auto object-contain transition-all duration-300 ${isScrolled ? "h-5 md:h-6" : "h-6 md:h-8"
               }`}
@@ -58,7 +58,10 @@ export default function Nav() {
 
           {/* Architecture Dropdown */}
           <li className="relative group py-2">
-            <button className="flex items-center gap-1 text-[11px] font-light tracking-[0.12em] uppercase text-dark-muted hover:text-text transition-colors duration-200 cursor-pointer bg-transparent border-none p-0 outline-none">
+            <a
+              href="/architecture"
+              className="flex items-center gap-1 text-[11px] font-light tracking-[0.12em] uppercase text-dark-muted hover:text-text transition-colors duration-200"
+            >
               Architecture
               <svg
                 className="w-2.5 h-2.5 transition-transform duration-200 group-hover:rotate-180 opacity-60"
@@ -71,7 +74,7 @@ export default function Nav() {
                   clipRule="evenodd"
                 />
               </svg>
-            </button>
+            </a>
             <ul className="absolute left-1/2 -translate-x-1/2 top-full mt-1 w-48 bg-white border border-light-border shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col py-2 z-50 list-none m-0">
               <li>
                 <a
@@ -91,10 +94,18 @@ export default function Nav() {
               </li>
               <li>
                 <a
-                  href="/architecture/hospitality-3d"
+                  href="/architecture/hospitality"
                   className="block px-4 py-2 text-left text-[10px] font-light tracking-[0.1em] uppercase text-dark-muted hover:text-text hover:bg-warm-gray transition-colors duration-150"
                 >
-                  Hospitality 3D Project
+                  Hospitality
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/architecture/3dproject"
+                  className="block px-4 py-2 text-left text-[10px] font-light tracking-[0.1em] uppercase text-dark-muted hover:text-text hover:bg-warm-gray transition-colors duration-150"
+                >
+                  3D Project
                 </a>
               </li>
             </ul>
@@ -318,11 +329,20 @@ export default function Nav() {
                 </li>
                 <li>
                   <a
-                    href="/architecture/hospitality-3d"
+                    href="/architecture/hospitality"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="block text-[13px] font-light tracking-[0.15em] uppercase text-muted hover:text-text"
                   >
-                    Hospitality 3D Project
+                    Hospitality
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/architecture/3dproject"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block text-[13px] font-light tracking-[0.15em] uppercase text-muted hover:text-text"
+                  >
+                    3D Project
                   </a>
                 </li>
               </ul>

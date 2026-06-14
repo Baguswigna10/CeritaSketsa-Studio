@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-12 mb-16">
         <div className="footer-brand max-w-[260px]">
           <span className="font-serif text-xl font-normal tracking-[0.12em] uppercase text-text mb-4 block select-none">
-            <img src="../logo-CS.png" alt="CS Logo" className="h-6 md:h-8 w-auto object-contain" />
+            <img src="/logo-CS.png" alt="CS Logo" className="h-6 md:h-8 w-auto object-contain" />
           </span>
           <p className="text-xs font-light text-dark-muted leading-relaxed">
             Studio arsitektur berbasis di Jakarta, berdedikasi pada desain yang bermakna, berkelanjutan, dan kontekstual.
