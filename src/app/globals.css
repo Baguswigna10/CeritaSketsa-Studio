@@ -1,26 +1,86 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-warm-gray: #f2f0ec;
+  --color-off-white: #f9f8f6;
+  --color-light-border: #e8e5e0;
+  --color-muted: #b0aba2;
+  --color-dark-muted: #7a746c;
+  --color-text: #1a1916;
+  --color-accent: #1a1916;
+
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-dm-sans), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* --- Keyframe Animations --- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes scrollAnim {
+  from { top: -100%; }
+  to   { top: 100%; }
+}
+
+/* --- Direct animation utility classes (no reliance on Tailwind --animate-*) --- */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease both;
+}
+
+.draw-line {
+  animation: drawLine 2s ease forwards;
+}
+
+.scroll-anim {
+  animation: scrollAnim 2s ease infinite;
+}
+
+/* --- Delay helpers --- */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.25s; }
+.delay-3 { animation-delay: 0.4s; }
+.delay-4 { animation-delay: 0.6s; }
+.delay-5 { animation-delay: 0.8s; }
+
+/* --- Scroll reveal system --- */
+/* Content is VISIBLE by default. JS adds .ready on body, then .reveal starts hidden.
+   This ensures no-JS / slow-hydration still shows content. */
+body.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+body.js-ready .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
